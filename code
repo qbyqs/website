@@ -1,0 +1,676 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+  <head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "hn1jee7ybn");
+</script>    
+	{% include 'autoketing-seo' %}
+
+ <script src="https://cdn.shopifycdn.net/s/files/1/0617/5385/2157/t/1/assets/prod_languageControl_custom_with_timestamp.js"></script>{% render 'thunder-injects' %}
+   
+    <meta name="google-site-verification" content="QfuCFtJWNDkU8dK8YeEp-8t_fwEsWWCOwYtUg2GS-W8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="{{ settings.accent_color }}">
+
+<!-- Global site tag (gtag.js) - Google Ads: 1014159699 -->
+<script async data-src="https://www.googletagmanager.com/gtag/js?id=AW-1014159699"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1014159699');
+</script>
+
+<title>
+      {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+    {% include 'social-meta-tags' %}
+    {%comment%}<!-- miniOrange SCRIPT START -->{% include 'mo-firewall' %}<!-- miniOrange SCRIPT END --> 
+ {{ 'wiloke_my_instagram.js' | asset_url | script_tag }}
+{{content_for_header}}  {%endcomment%}{%include "shebley"%}    
+ {% include 'tricon-badge' %}
+
+ {% if template != 'index' %}
+
+ {% endif %}
+    <link rel="stylesheet" href="{{ 'theme.scss.css' | asset_url }}">
+    {%capture pDescription%}
+	<link href='https://s3.us-east-2.amazonaws.com/ekoma/ekoma.css.gz' rel='stylesheet' type='text/css' media='all' />
+    {%endcapture%}
+    <script>if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 ) {   document.write({{pDescription | json}}); } else { } document.close();      </script>
+
+	{{ 'custom.css' | asset_url | stylesheet_tag }}
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1014159699');
+</script>
+
+{% if template != 'index' %}
+  {% include 'sizechartsrelentless' %}
+{% endif %}
+    <script>
+      // This allows to expose several variables to the global scope, to be used in scripts
+      window.theme = {
+        template: {{ template.name | json }},
+        shopCurrency: {{ shop.currency | json }},
+        moneyFormat: {{ shop.money_format | json }},
+        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+        currencyConversionEnabled: {{ settings.currency_conversion_enabled | json }},
+        currencyConversionMoneyFormat: {{ settings.currency_conversion_money_format | json }},
+        currencyConversionRoundAmounts: {{ settings.currency_conversion_round_amounts | json }},
+        productImageSize: {{ settings.product_image_size | json }},
+        searchMode: {{ settings.search_mode | json }},
+        showPageTransition: {{ settings.show_page_transition | json }},
+        showElementStaggering: {{ settings.show_element_staggering | json }},
+        showImageZooming: {{ settings.show_image_zooming | json }},
+        enableExperimentalResizeObserver: false
+      };
+      window.languages = {
+        cartAddNote: {{ 'cart.general.add_note' | t | json }},
+        cartEditNote: {{ 'cart.general.edit_note' | t | json }},
+        productImageLoadingError: {{ 'product.slideshow.image_loading_error' | t | json }},
+        productFormAddToCart: {% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t | json }}{% else %}{{ 'product.form.add_to_cart' | t | json }}{% endif %},
+        productFormUnavailable: {{ 'product.form.unavailable' | t | json }},
+        productFormSoldOut: {{ 'product.form.sold_out' | t | json }},
+        shippingEstimatorOneResult: {{ 'cart.shipping_estimator.one_result_title' | t | json }},
+        shippingEstimatorMoreResults: {{ 'cart.shipping_estimator.more_results_title' | t | json }},
+        shippingEstimatorNoResults: {{ 'cart.shipping_estimator.no_results_title' | t | json }}
+      };
+      window.lazySizesConfig = {
+        loadHidden: false,
+        hFac: 0.5,
+        expFactor: 2,
+        ricTimeout: 150,
+        lazyClass: 'Image--lazyLoad',
+        loadingClass: 'Image--lazyLoading',
+        loadedClass: 'Image--lazyLoaded'
+      };
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      document.documentElement.style.setProperty('--window-height', window.innerHeight + 'px');
+      // We do a quick detection of some features (we could use Modernizr but for so little...)
+      (function() {
+        document.documentElement.className += ((window.CSS && window.CSS.supports('(position: sticky) or (position: -webkit-sticky)')) ? ' supports-sticky' : ' no-supports-sticky');
+        document.documentElement.className += (window.matchMedia('(-moz-touch-enabled: 1), (hover: none)')).matches ? ' no-supports-hover' : ' supports-hover';
+      }());
+      window.onpageshow = function (event) {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      };
+    </script>
+    {%capture pDescription%}
+    <script src="{{ 'lazysizes.min.js' | asset_url }}" defer></script>
+    {% if settings.currency_conversion_enabled %}
+      <script src="//cdn.shopify.com/s/javascripts/currencies.js" defer></script>
+    {% endif %}
+    {%- if template == 'customers/addresses' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
+    {%- endif -%}
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?unknown=polyfill&features=fetch,Element.prototype.closest,Element.prototype.remove,Element.prototype.classList,Array.prototype.includes,Array.prototype.fill,Object.assign,CustomEvent,IntersectionObserver,IntersectionObserverEntry" defer></script>
+    <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
+    {%endcapture%}
+    <script>if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 ) {   document.write({{pDescription | json}}); } else { } document.close();</script>
+    <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+
+  {% if template != 'index' %}
+     {% render 'microdata-schema' %} 
+    {% include 'minmaxify-head' %}
+  {% endif %}
+    <script type='text/javascript'>var jiltStorefrontParams = {{ shop.metafields.jilt_storefront | json }}; {% if customer %}jiltStorefrontParams.customerID = {{ customer.id }};{% endif %}</script>
+<!-- SnappicSnipStart -->
+<script>
+if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 && window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('X11') == -1 && window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x47\x54\x6D\x65\x74\x72\x69\x78') == -1) {
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '148249102350913');
+  fbq('track', 'PageView');}
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=148249102350913&ev=PageView&noscript=1" />
+</noscript>
+<!-- SnappicSnipEnd -->
+{% if template != 'index' %}
+	{% include 'under-construction' %}
+    {{ 'https://spa.spicegems.com/js/src/latest/scriptTag.js?shop=que-shebley.myshopify.com' | script_tag }}
+{% endif %}
+
+{% include 'gsf-conversion-pixels' %}
+{%capture pDescription%}
+
+  {% render 'zoorix-cart-items' %}
+{{ 'sectionhub.scss.css' | asset_url | stylesheet_tag }}
+<script>var scaaffCheck = false;</script>
+{{ 'sca_affiliate.js' | asset_url | script_tag }}
+  <link rel='manifest' crossorigin='use-credentials' href='/apps/mobilizer/manifest?shop=que-shebley.myshopify.com'>
+  {% render 'translation-lab-language-management' %}
+<script id='tg-gtm-integration'>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PBVJ4HW');</script>{% include 'fa_translate_core' %} 
+ {% capture boostersnippet %}{% include "booster-apps-common" %}{% endcapture %}{% unless boostersnippet contains "Liquid error" %}{{ boostersnippet }}{% endunless %}
+<link href="https://fonts.googleapis.com/css2?family=undefined&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=undefined&display=swap" rel="stylesheet">
+<script id="sg-js-global-vars">
+                        sgGlobalVars = {{ shop.metafields['sg-cc']['sg-metafield'] }};
+                        if(sgGlobalVars) {
+                            sgGlobalVars.cart = {{ cart | json }};
+                            sgGlobalVars.currentProduct = {{ product | json }};
+                            sgGlobalVars.isAdmin = {% if content_for_header contains 'adminBarInjector' or content_for_header contains 'previewBarInjector' %}true{% else %}false{% endif %};
+                        }
+                    </script>
+{%endcapture%}
+<script>
+  if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 ) {   document.write({{pDescription | json}}); } else { } document.close();  
+</script>
+ 
+
+	{% include 'autoketing-end-head-seo' %}
+</head>
+<body data-template="{{ template }}" class="prestige--v3 {% if template.directory %}template-{{ template.directory | handle }}{% endif %} template-{{ template.name | handle }}">
+
+{% include 'avada-gtm-body' %}
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBVJ4HW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <a class="PageSkipLink u-visually-hidden" href="#main">{{ 'header.navigation.skip_to_content' | t }}</a>
+    <span class="LoadingBar"></span>
+    <div class="PageOverlay"></div>
+    <div class="PageTransition"></div>
+    {% section 'popup' %}
+    {% section 'sidebar-menu' %}
+    {%- if template != 'cart' -%}
+      {% include 'cart-drawer' %}
+    {%- endif -%}
+    <div class="PageContainer">
+      {% section 'announcement' %}
+      {% section 'header' %}
+      <main id="main" role="main">
+        {{ content_for_layout }}{% include 'sectionhub' %}
+      </main>
+      {% section 'footer' %}
+    </div>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBVJ4HW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    SEARCH FORM (available globally)
+    --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+    <div id="Search" class="Search Modal Modal--fullScreen" aria-hidden="true" data-scrollable>
+      <div class="Search__SearchBar">
+        <form action="/search" name="GET" role="search" class="Search__Form">
+          <input type="search" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="{{ 'search.general.input_placeholder' | t }}" autofocus>
+          <input type="hidden" name="type" value="product">
+        </form>
+        <button class="Search__Close Link Link--primary" data-action="close-modal">{% include 'icon' with 'close' %}</button>
+      </div>
+      <div class="Search__Results">
+        {%- if settings.search_mode != 'product' -%}
+          <div class="PageLayout PageLayout--breakLap">
+            <div class="PageLayout__Section"></div>
+            <div class="PageLayout__Section PageLayout__Section--secondary"></div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+<script var isMobile = /iPhone|iPod|Android/i.test(navigator.userAgent);
+ if (isMobile){
+}
+</script>  
+<script src="{{ 'sectionhub.js' | asset_url }}" defer></script>
+
+{% render 'upsell-now', customer: customer, product: product, template: template, cart: cart %}
+    {{ 'ajax.js' | asset_url | script_tag }}
+
+  {% render 'announceway' %}
+<noscript id='tg-gtm-pixel'><iframe src='https://www.googletagmanager.com/ns.html?id=GTM-PBVJ4HW height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>{{ 'sharecart.css' | asset_url | stylesheet_tag }}   
+
+  <!-- BEGIN 360 app block -->
+<script type="text/javascript" async>
+
+    fetch('https://shapp.sitesearch360.com/check?shop=' + Shopify.shop)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status && data.plugin_config_id) {
+                if (Shopify.theme.name.toLowerCase().indexOf('dawn') != -1) {
+                    initSS360SearchDawn(data.plugin_config_id);
+                }
+                else if (Shopify.theme.name.toLowerCase().indexOf('debut') != -1) {
+                    initSS360SearchDebut(data.plugin_config_id);
+                }
+                else if (Shopify.theme.name.toLowerCase().indexOf('minimal') != -1) {
+                    initSS360SearchMinimal(data.plugin_config_id);
+                }
+                else if (Shopify.theme.name.toLowerCase().indexOf('narrative') != -1) {
+                    initSS360SearchNarrative(data.plugin_config_id);
+                }
+                else if (Shopify.theme.name.toLowerCase().indexOf('simple') != -1) {
+                    initSS360SearchSimple(data.plugin_config_id);
+                }
+                else if (Shopify.theme.name.toLowerCase().indexOf('supply') != -1) {
+                    initSS360SearchSupply(data.plugin_config_id);
+                }
+                 else {
+                    initSS360SearchUnsupported(data.plugin_config_id);
+                }
+            }
+        });
+
+    function initSS360SearchDawn(plugin_config_id) {
+
+        var script = document.createElement('script');
+        script.src = 'https://js.sitesearch360.com/plugin/bundle/' + plugin_config_id + '.js?integration=shopify'
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        var styles = document.createElement('style');
+        styles.textContent = 'div.predictive-search {display: none !important;}';
+        document.getElementsByTagName('head')[0].appendChild(styles);
+
+
+        // Menu search
+        var search360 = document.getElementsByName('q')[0];
+        search360.setAttribute('id', 'searchBox');
+        search360.setAttribute('action', '#');
+        search360.setAttribute('data-base-url', '#');
+        search360.setAttribute('name', 'searchBox');
+
+        // Search page search
+        var search360 = document.getElementsByName('q')[0];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var searchButton = document.getElementsByClassName('search__button');
+        for (var i = 0; i < searchButton.length; i++) {
+            searchButton[0].setAttribute('id', 'searchButton');
+        }
+
+        var mainContent = document.createElement('div');
+        mainContent.classList.add('main-content', 'wrapper', 'template-search__results', 'page-width');
+
+        // For the different theme versions
+        if (document.getElementsByClassName('template-search spaced-section template-search--empty')[0]) {
+            document.getElementsByClassName('template-search spaced-section template-search--empty')[0].appendChild(mainContent);
+        } else {
+            document.getElementById('MainContent').appendChild(mainContent);
+        }
+
+
+        window.onload = function () {
+            SS360.changeConfig('callbacks.preSearch', () => {
+                var menuDetails = document.getElementsByTagName('details');
+                for (var i = 0; i < menuDetails.length; i++) {
+                    if (menuDetails[i].getAttribute('open') == 'true') {
+                        document.getElementsByClassName('search-modal__close-button modal__close-button link link--text focus-inset')[0].click()
+                    }
+                }
+                return true;
+            });
+        };
+
+        function ss360submit(event) {
+            document.getElementsByTagName('body')[0].click()
+        }
+
+    }
+
+    function initSS360SearchDebut(plugin_config_id) {
+
+        var script = document.createElement('script');
+        script.src = 'https://js.sitesearch360.com/plugin/bundle/' + plugin_config_id + '.js?integration=shopify'
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        var styles = document.createElement('style');
+        styles.textContent = '.predictive-search-wrapper {display:none;} @media screen and (min-width: 1200px) {.main-content.js-focus-hidden.wrapper {width: 1200px;margin: 0 auto;}}';
+        document.getElementsByTagName('head')[0].appendChild(styles);
+
+        var search360 = document.getElementsByName('q')[0];
+        search360.setAttribute('id', 'searchBox');
+        search360.setAttribute('action', '#');
+        search360.setAttribute('data-base-url', '#');
+        search360.setAttribute('name', 'searchBox');
+
+        var search360 = document.getElementsByName('q')[0];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var searchButton = document.getElementsByClassName('search-bar__submit');
+        for (var i = 0; i < searchButton.length; i++) {
+            searchButton[0].setAttribute('id', 'searchButton');
+        }
+
+        //search--less-than-2-results
+        var searchResultsBox = document.getElementsByClassName('search--less-than-2-results')[0];
+        searchResultsBox.classList.remove('search--less-than-2-results')
+        searchResultsBox.classList.add('main-content', 'wrapper', 'page-width', 'list-view-items');
+
+        let pageContainer = document.getElementById('PageContainer');
+        if (pageContainer) {
+            pageContainer.classList.remove('drawer-page-content');
+        }
+
+        window.onload = function () {
+            SS360.changeConfig('callbacks.preSearch', () => {
+                var menuDetails = document.getElementById('SearchDrawer');
+                if (menuDetails && menuDetails.getAttribute('tabindex') == '-1') {
+                    document.getElementsByClassName('btn--link search-bar__close js-drawer-close')[0].click()
+                }
+                return true;
+            });
+        };
+    }
+
+    function initSS360SearchMinimal(plugin_config_id) {
+
+        var script = document.createElement('script');
+        script.src = 'https://js.sitesearch360.com/plugin/bundle/' + plugin_config_id + '.js?integration=shopify'
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        let _id = 0;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            _id = 1;
+        }
+        var search360 = document.getElementsByName('q')[0];
+        search360.setAttribute('id', 'searchBox');
+        search360.setAttribute('action', '#');
+        search360.setAttribute('data-base-url', '#');
+        search360.setAttribute('name', 'searchBox');
+
+        var search360 = document.getElementsByName('q')[0];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var search360 = document.getElementsByName('q')[0];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var searchButton = document.getElementsByClassName('btn--search');
+        searchButton[_id].setAttribute('id', 'searchButton');
+
+        var mainWrapper = document.getElementsByTagName('main');
+        for (var i = 0; i < mainWrapper.length; i++) {
+            mainWrapper[0].classList.add('wrapper', 'main-content');
+        }
+    }
+
+    function initSS360SearchNarrative(plugin_config_id) {
+
+        var script = document.createElement('script');
+        script.src = 'https://js.sitesearch360.com/plugin/bundle/' + plugin_config_id + '.js?integration=shopify'
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+
+        // Menu search
+        var search360 = document.getElementsByName('q')[0];
+        search360.setAttribute('id', 'searchBox');
+        search360.setAttribute('action', '#');
+        search360.setAttribute('data-base-url', '#');
+        search360.setAttribute('name', 'searchBox');
+
+        // Search page search
+        var search360 = document.getElementsByName('q')[0];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        window.onload = function () {
+            $('button[type="submit"].btn--square').attr('id', 'searchButton')
+
+            if (ss360Config.results.integrationType != 'layover') {
+
+                var style = document.createElement('style');
+                style.textContent = '#ss360-layer{position: unset;z-index: unset;}';
+                document.getElementsByTagName('head')[0].appendChild(style);
+
+
+                $(document).on('focus', '#searchBox', function () {
+                    $(document).find('#ss360-layer').css({ 'position': 'relative', 'z-index': -1 });
+                });
+
+                $(document).on('focusout', '#searchBox', function () {
+                    setTimeout(() => {
+                        $(document).find('#ss360-layer').css({ 'position': 'unset', 'z-index': 1 });
+                    }, 300);
+                });
+
+                SS360.changeConfig('callbacks.preSearch', () => {
+
+                    var menuBtn = document.getElementsByClassName('site-header__navigation btn btn--clear btn--square')[0];
+                    if (menuBtn.getAttribute('aria-expanded') == 'true') {
+                        document.getElementsByClassName('site-header__navigation btn btn--clear btn--square')[0].click()
+                    }
+
+                    return true;
+                });
+
+            }
+
+            // Filter
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                var styleFilter = document.createElement('style');
+                styleFilter.textContent = '#ss360-filter{top: 6rem;}';
+                document.getElementsByTagName('head')[0].appendChild(styleFilter);
+            }
+
+        }
+
+
+        // var mainWrapper = document.getElementsByTagName('form');
+        // var container = document.createElement('div');
+        // container.classList = 'wrapper main-content';
+        // mainWrapper[0].parentNode.parentNode.parentNode.appendChild(container);
+
+        var searchWrapper = document.getElementsByClassName('page-width');
+        for (var i = 0; i < searchWrapper.length; i++) {
+            if (searchWrapper[i].getAttribute('data-section-id') == 'search-template') {
+                searchWrapper[i].classList = 'wrapper main-content page-width';
+            }
+        }
+    }
+
+    function initSS360SearchSimple(plugin_config_id) {
+
+        var script = document.createElement('script');
+        script.src = 'https://js.sitesearch360.com/plugin/bundle/' + plugin_config_id + '.js?integration=shopify'
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        let _id = 0;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            _id = 1;
+        }
+
+        var search360 = document.getElementsByName('q')[0];
+        search360.setAttribute('id', 'searchBox');
+        search360.setAttribute('action', '#');
+        search360.setAttribute('data-base-url', '#');
+        search360.setAttribute('name', 'searchBox');
+
+        var search360 = document.getElementsByName('q')[0];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var searchButton = document.getElementsByClassName('search-bar__submit');
+        for (var i = 0; i < searchButton.length; i++) {
+            searchButton[0].setAttribute('id', 'searchButton');
+        }
+
+        var mainWrapper = document.getElementsByTagName('main');
+        for (var i = 0; i < mainWrapper.length; i++) {
+            mainWrapper[0].classList.add('wrapper', 'main-content');
+        }
+
+        $(document).on('focus', '#searchBox', function () {
+            $(document).find('.main-content').css('overflow', 'unset');
+        });
+
+        $(document).on('focusout', '#searchBox', function () {
+            setTimeout(() => {
+                $(document).find('.main-content').css('overflow', 'hidden');
+            }, 300);
+        });
+    }
+
+    function initSS360SearchSupply(plugin_config_id) {
+
+        var script = document.createElement('script');
+        script.src = 'https://js.sitesearch360.com/plugin/bundle/' + plugin_config_id + '.js?integration=shopify'
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        let _id = 0;
+        let isMobile = false;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            _id = 1;
+            isMobile = true;
+        }
+        var search360 = document.getElementsByName('q')[_id];
+        search360.setAttribute('id', 'searchBox');
+        search360.setAttribute('action', '#');
+        search360.setAttribute('data-base-url', '#');
+        search360.setAttribute('name', 'searchBox');
+
+        var search360 = document.getElementsByName('q')[_id];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var search360 = document.getElementsByName('q')[_id];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var searchButton = document.getElementsByClassName('search-bar--submit');
+        searchButton[_id].setAttribute('id', 'searchButton');
+
+        var mainWrapper = document.getElementsByTagName('main');
+        for (var i = 0; i < mainWrapper.length; i++) {
+            mainWrapper[0].classList.add('wrapper', 'main-content');
+        }
+
+        if (isMobile) {
+            var style = document.createElement('style');
+            style.textContent = '#ss360-filter{z-index: 999999999;}';
+            document.getElementsByTagName('head')[0].appendChild(style);
+        }
+
+
+        window.onload = function () {
+            SS360.changeConfig('callbacks.preSearch', () => {
+                if (isMobile && document.getElementsByClassName('menu-toggle')[0].getAttribute('aria-expanded') == 'true') {
+                    document.getElementsByClassName('menu-toggle')[0].click();
+                }
+                return true;
+            }
+            );
+        }
+    }
+
+    function initSS360SearchUnsupported(plugin_config_id) {
+
+        var script = document.createElement('script');
+        script.src = 'https://js.sitesearch360.com/plugin/bundle/' + plugin_config_id + '.js?integration=shopify'
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        // Menu search
+        var search360 = document.getElementsByName('q')[0];
+        search360.setAttribute('id', 'searchBox');
+        search360.setAttribute('action', '#');
+        search360.setAttribute('data-base-url', '#');
+        search360.setAttribute('name', 'searchBox');
+
+        // Search page search
+        var search360 = document.getElementsByName('q')[0];
+        if (search360) {
+            search360.setAttribute('id', 'searchBox');
+            search360.setAttribute('action', '#');
+            search360.setAttribute('data-base-url', '#');
+            search360.setAttribute('name', 'searchBox');
+        }
+
+        var searchButton = document.getElementsByClassName('search__button');
+        for (var i = 0; i < searchButton.length; i++) {
+            searchButton[0].setAttribute('id', 'searchButton');
+        }
+
+        var mainContent = document.createElement('div');
+        mainContent.classList.add('main-content', 'wrapper', 'template-search__results', 'page-width');
+        document.getElementsByClassName('template-search spaced-section template-search--empty')[0].appendChild(mainContent);
+
+        function ss360submit(event) {
+            document.getElementsByTagName('body')[0].click()
+        }
+
+    }
+</script>
+<!-- END 360 app block -->
+  
+{% render 'thunder-preload' %}
+<script src="https://widget.sezzle.com/v1/javascript/price-widget?uuid=f596304c-d4b3-47fa-8b0d-e7400b53b4af"></script>
+
+{% include 'etranslate-rtl' %}
+{% render 'th-subscription-scripts' %} <script>
+(function () {
+  var s = document.createElement('script');
+  s.src = 'https://static.willdesk.com/c/willdesk.min.js?v=';
+  s.src += new Date().getTime();
+  document.body.appendChild(s);
+})();
+</script>
+ 
+{%render 'humaine-ai-app' %}
+{% render 'banana-stand-footer' %}
+<script src="https://cdn.fera.ai/js/fera.js" type="text/javascript" async="async"></script>
+</body>
+</html>
